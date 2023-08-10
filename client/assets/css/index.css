@@ -1,0 +1,57 @@
+.searchbar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+.searchbar > button {
+  border: none;
+  padding: 0.6rem 2rem;
+  cursor: pointer;
+  font-weight: 600;
+  background: #9333ea;
+  color: #fff;
+}
+.searchbar > button:hover {
+  background: #6b21a8;
+}
+
+#card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.movie {
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.5rem;
+}
+.movie > img {
+  width: 4rem;
+}
+.movie > div > h2 {
+  font-size: 0.9rem;
+}
+.movie > div > p {
+  font-size: 0.6rem;
+}
+
+@media (min-width: 768px) {
+  .movie > img {
+    width: 6rem;
+  }
+  .movie > div > h2 {
+    font-size: 1.2rem;
+  }
+  .movie > div > p {
+    font-size: 0.8rem;
+  }
+}

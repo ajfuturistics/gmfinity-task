@@ -1,0 +1,30 @@
+.login-heading {
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.login-form {
+  margin: 1rem;
+  padding: 1rem;
+  background: #fff;
+}
+
+.login-form > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.login-form > div > label {
+  width: 100%;
+}
+.login-form > div > input {
+  width: 100%;
+  border: 1px solid black;
+}
+#logout {
+  display: none;
+}

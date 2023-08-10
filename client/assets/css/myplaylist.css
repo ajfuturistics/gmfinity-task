@@ -1,0 +1,23 @@
+#playlist-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.playlist-create-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.playlist-card {
+  width: 100%;
+  background: #fff;
+  margin: 0.4rem;
+  padding: 1rem;
+}
+.playlist-card > button {
+  margin-right: 0.6rem;
+}

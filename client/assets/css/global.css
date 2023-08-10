@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #f3e8ff;
+  position: relative;
+}
+
+button {
+  border: none;
+  padding: 0.4rem 2rem;
+  cursor: pointer;
+  font-weight: 600;
+  background: #9333ea;
+  color: #fff;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+button:hover {
+  background: #6b21a8;
+}
+
+input {
+  outline: none;
+  padding: 0.6rem;
+  border: none;
+  width: 100%;
+}
+select {
+  outline: none;
+  padding: 0.6rem;
+  border: none;
+  width: 100%;
+}
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  cursor: pointer;
+}
+
+/* ---- Global Styles ----- */
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 40rem;
+}
+.underline {
+  text-decoration: underline;
+}
+.text-center {
+  text-align: center;
+}
+.my-heading {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* ----- navbar ------ */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0.6rem 1.4rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  background: #fff;
+}
+
+#nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* ------ modal ------- */
+.modalContainer {
+  display: none;
+  justify-content: center;
+  align-items: flex-start;
+}
+.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.4rem;
+  width: 96%;
+  max-width: 40rem;
+  padding: 1rem;
+  min-height: 250px;
+  position: fixed;
+  top: 10%;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  z-index: 2;
+}
+
+.modal .flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal input {
+  padding: 0.7rem 1rem;
+  border: 1px solid #ddd;
+  font-size: 0.9em;
+}
+.modal select {
+  padding: 0.7rem 1rem;
+  border: 1px solid #ddd;
+  font-size: 0.9em;
+}
+
+.modal p {
+  font-size: 0.9rem;
+  color: #777;
+  margin: 0.4rem 0 0.2rem;
+}
+
+.modal-close {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.modal-close > button {
+  border-radius: 50%;
+  padding: 0.2rem;
+  width: 2rem;
+  height: 2rem;
+}
+
+.open-dialog {
+  display: flex;
+}
+.close-dialog {
+  display: none;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  z-index: 1;
+}
