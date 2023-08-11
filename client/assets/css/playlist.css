@@ -1,0 +1,26 @@
+.titleContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.share-logo {
+  width: 1.5rem !important;
+  cursor: pointer;
+}
+
+.link-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem;
+}
+.link-container > img {
+  width: 1.5rem !important;
+  cursor: pointer;
+}
+
+#link-get {
+  width: 100%;
+  font-size: 0.76rem;
+}

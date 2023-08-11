@@ -8,9 +8,9 @@ Assignment of GMFINITY
 
 ```
 
-DB_URI="Your mongo db URI"
-SECRET="JWT Secret"
-API_KEY="OMDb API KEY"
+DB_URI = "Your mongo db URI"
+SECRET = "JWT Secret"
+API_KEY = "OMDb API KEY"
 
 ```
 

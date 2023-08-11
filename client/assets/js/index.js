@@ -37,7 +37,7 @@ async function addOptionsInSelect(options) {
 }
 
 async function handleAddToPlaylist(data) {
-  const token = JSON.parse(localStorage.getItem("token"));
+  const token = JSON.parse(localStorage.getItem("token")) || "";
 
   await fetch(`http://localhost:5000/playlist/${selectElement.value}`, {
     method: "POST",
@@ -68,7 +68,7 @@ async function handleAddToPlaylist(data) {
 }
 
 async function openDialog(data) {
-  const token = JSON.parse(localStorage.getItem("token"));
+  const token = JSON.parse(localStorage.getItem("token")) || "";
   if (!token) {
     alert("Login to add this movie to playlist");
     return;

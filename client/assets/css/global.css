@@ -68,6 +68,9 @@ a {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
+.bg-gray {
+  background: #e6e6e6 !important;
+}
 
 /* ----- navbar ------ */
 .navbar {

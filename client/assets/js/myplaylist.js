@@ -10,7 +10,7 @@ var addTitleElement = document.getElementById("addtitle");
 var addShareElement = document.getElementById("addshare");
 
 function addModal() {
-  const token = JSON.parse(localStorage.getItem("token"));
+  const token = JSON.parse(localStorage.getItem("token")) || "";
 
   if (!token) {
     alert("Login to create");
@@ -27,7 +27,7 @@ function addModal() {
 }
 
 function updateModal(element) {
-  const token = JSON.parse(localStorage.getItem("token"));
+  const token = JSON.parse(localStorage.getItem("token")) || "";
 
   if (!token) {
     alert("Login to update");
@@ -68,6 +68,12 @@ function generatePlaylists(data) {
     const addedBy = document.createElement("p");
     addedBy.textContent = `Added by: ${element?.userId?.username}`;
 
+    const viewBtn = document.createElement("button");
+    viewBtn.textContent = "View";
+    viewBtn.addEventListener("click", () => {
+      goToView(element._id);
+    });
+
     const updatebtn = document.createElement("button");
     updatebtn.textContent = "Update";
     updatebtn.addEventListener("click", () => {
@@ -86,6 +92,7 @@ function generatePlaylists(data) {
       visibility,
       numberofMovies,
       addedBy,
+      viewBtn,
       updatebtn,
       deletebtn
     );
@@ -94,7 +101,7 @@ function generatePlaylists(data) {
 }
 
 async function onLoadFunction() {
-  const token = JSON.parse(localStorage.getItem("token"));
+  const token = JSON.parse(localStorage.getItem("token")) || "";
 
   if (!token) {
     alert("Login to access this page");
@@ -127,7 +134,7 @@ async function handleAddPlaylist() {
     alert("Enter valid details");
     return;
   }
-  const token = JSON.parse(localStorage.getItem("token"));
+  const token = JSON.parse(localStorage.getItem("token")) || "";
 
   await fetch(`http://localhost:5000/playlist`, {
     method: "POST",
@@ -159,7 +166,7 @@ async function handleUpdatePlaylist() {
     alert("Enter valid details");
     return;
   }
-  const token = JSON.parse(localStorage.getItem("token"));
+  const token = JSON.parse(localStorage.getItem("token")) || "";
 
   await fetch(`http://localhost:5000/playlist/${updateIdElement.value}`, {
     method: "PUT",
@@ -187,7 +194,7 @@ async function handleDeletePlaylist(id) {
   if (!isDelete) {
     return;
   }
-  const token = JSON.parse(localStorage.getItem("token"));
+  const token = JSON.parse(localStorage.getItem("token")) || "";
 
   await fetch(`http://localhost:5000/playlist/${id}`, {
     method: "DELETE",
@@ -206,4 +213,8 @@ async function handleDeletePlaylist(id) {
       alert(result?.message || "something went wrong");
     }
   });
+}
+
+function goToView(id) {
+  window.location.href = `playlist.html?playlistId=${id}`;
 }
