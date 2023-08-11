@@ -108,7 +108,7 @@ async function onLoadFunction() {
     window.location.href = "/";
     return;
   } else {
-    await fetch(`http://localhost:5000/playlist`, {
+    await fetch(`https://gmfinity-task.vercel.app/playlist`, {
       headers: {
         authorization: `bearer ${token}`,
       },
@@ -136,7 +136,7 @@ async function handleAddPlaylist() {
   }
   const token = JSON.parse(localStorage.getItem("token")) || "";
 
-  await fetch(`http://localhost:5000/playlist`, {
+  await fetch(`https://gmfinity-task.vercel.app/playlist`, {
     method: "POST",
     headers: {
       authorization: `bearer ${token}`,
@@ -168,17 +168,20 @@ async function handleUpdatePlaylist() {
   }
   const token = JSON.parse(localStorage.getItem("token")) || "";
 
-  await fetch(`http://localhost:5000/playlist/${updateIdElement.value}`, {
-    method: "PUT",
-    headers: {
-      authorization: `bearer ${token}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      title: updateTitleElement.value,
-      share: updateShareElement.value,
-    }),
-  }).then(async (res) => {
+  await fetch(
+    `https://gmfinity-task.vercel.app/playlist/${updateIdElement.value}`,
+    {
+      method: "PUT",
+      headers: {
+        authorization: `bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        title: updateTitleElement.value,
+        share: updateShareElement.value,
+      }),
+    }
+  ).then(async (res) => {
     if (res.ok) {
       const result = await res.json();
       console.log(result);
@@ -196,7 +199,7 @@ async function handleDeletePlaylist(id) {
   }
   const token = JSON.parse(localStorage.getItem("token")) || "";
 
-  await fetch(`http://localhost:5000/playlist/${id}`, {
+  await fetch(`https://gmfinity-task.vercel.app/playlist/${id}`, {
     method: "DELETE",
     headers: {
       authorization: `bearer ${token}`,

@@ -11,7 +11,7 @@ async function handleSearch() {
   }
 
   const data = await fetch(
-    `http://localhost:5000/movie?search=${searchElement.value}`
+    `https://gmfinity-task.vercel.app/movie?search=${searchElement.value}`
   ).then(async (res) => {
     if (res.ok) {
       const result = await res.json();
@@ -39,22 +39,25 @@ async function addOptionsInSelect(options) {
 async function handleAddToPlaylist(data) {
   const token = JSON.parse(localStorage.getItem("token")) || "";
 
-  await fetch(`http://localhost:5000/playlist/${selectElement.value}`, {
-    method: "POST",
-    headers: {
-      authorization: `bearer ${token}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      movie: {
-        movieId: data?.imdbID,
-        title: data?.Title,
-        poster: data?.Poster,
-        year: data?.Year,
-        type: data?.Type,
+  await fetch(
+    `https://gmfinity-task.vercel.app/playlist/${selectElement.value}`,
+    {
+      method: "POST",
+      headers: {
+        authorization: `bearer ${token}`,
+        "Content-Type": "application/json",
       },
-    }),
-  }).then(async (res) => {
+      body: JSON.stringify({
+        movie: {
+          movieId: data?.imdbID,
+          title: data?.Title,
+          poster: data?.Poster,
+          year: data?.Year,
+          type: data?.Type,
+        },
+      }),
+    }
+  ).then(async (res) => {
     if (res.ok) {
       const result = await res.json();
       console.log(result);
@@ -85,7 +88,7 @@ async function openDialog(data) {
       handleAddToPlaylist(data);
     });
 
-    await fetch(`http://localhost:5000/playlist`, {
+    await fetch(`https://gmfinity-task.vercel.app/playlist`, {
       headers: {
         authorization: `bearer ${token}`,
       },

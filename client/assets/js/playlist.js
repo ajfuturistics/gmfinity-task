@@ -101,7 +101,7 @@ async function getData() {
   let searchParams = new URLSearchParams(url.search);
   const id = searchParams.get("playlistId") || "0";
 
-  await fetch(`http://localhost:5000/playlist/${id}`, {
+  await fetch(`https://gmfinity-task.vercel.app/playlist/${id}`, {
     headers: {
       authorization: `bearer ${token}`,
     },

@@ -10,7 +10,7 @@ async function login() {
     return;
   }
 
-  await fetch(`http://localhost:5000/auth`, {
+  await fetch(`https://gmfinity-task.vercel.app/auth`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -39,7 +39,7 @@ async function register() {
     return;
   }
 
-  await fetch(`http://localhost:5000/auth/register`, {
+  await fetch(`https://gmfinity-task.vercel.app/auth/register`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
